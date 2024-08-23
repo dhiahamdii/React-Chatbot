@@ -1,0 +1,595 @@
+
+
+/* ============= css related to chats =============== */
+
+
+
+
+
+#history{
+    border-top: solid 0.5px rgba(255,255,255,0.5);
+  
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  
+  
+  body {
+    background-color: #ffffff;
+  }
+  
+  .chat_header_title {
+    color: white;
+    float: initial;
+    margin-top: 3%;
+    margin-left: 45%;
+  }
+  
+  
+  
+  
+  
+  .clearf {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+  
+  .botAvatar {
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    float: left;
+    margin-left: 5px;
+    /* border: 2px solid  #060DCF ; */
+  }
+  
+  .botMsg {
+    float: left;
+    margin-top: 5px;
+    background: rgba(255, 255, 255, 0.84);;
+    color: black;
+    /* box-shadow: 2px 3px 9px 0px #9a82842e; */
+    margin-left: 0.5em;
+    padding: 10px;
+    border-radius: 1.5em;
+    max-width: 60%;
+    min-width: 1%;
+    font-size: 13px;
+    font-family: 'Lato';
+    word-wrap: break-word;
+    border-radius: 5px 20px 20px 20px;
+    font-size: 16px;
+    letter-spacing: .5px;
+    
+  }
+  #wrapper {
+    color: #000;
+    margin:auto;
+    width: 80% ;
+  }
+  
+  
+  
+  
+  
+  
+  
+  textarea {
+    box-shadow: none;
+    resize: none;
+    outline: none;
+    overflow: hidden;
+    font-family: Lato;
+  }
+  
+  
+  
+  
+  textarea::-webkit-input-placeholder {
+    font-family: Lato;
+  }
+  
+  textarea-webkit-scrollbar {
+    width: 0 !important;
+  }
+  
+  .gifgif{
+    position: absolute;
+    top: 10%;
+    left: 44.5%;
+  }
+  
+  .keypad {
+          position: absolute;
+          bottom: 0;
+          width: 80%;
+          border: groove;
+          border-radius:20px 20px 20px 20px;
+          left: 10%;
+          bottom: 1%;
+          background: white;
+  }
+  
+  .userMsg {
+    animation: animateElement linear 0.2s;
+    animation-iteration-count: 1;
+    margin-top: 5px;
+    word-wrap: break-word;
+    float: right;
+    margin-right: 0.5em;
+    color: white;
+    margin-bottom: 0.15em;
+    font-size: 13px;
+    font-family: 'Lato';
+    max-width: 65%;
+    min-width: 1%;
+    border-radius: 20px 5px 20px 20px;
+    background: rgba(44, 44, 44, 1);
+    transform: scale(1) translate3d(0px, 0px, 0px);
+    padding: 8px 16px;
+    height: auto;
+    font-size: 16px;
+    letter-spacing: .5px;
+  
+  }
+  
+  
+  
+  .userAvatar {
+    animation: animateElement linear 0.3s;
+    animation-iteration-count: 1;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    float: right;
+    margin-right: 5px;
+    /* border: 2px solid  #060DCF ; */
+  }
+  
+  .usrInput {
+    padding: 0.5em;
+    width: 86%;
+    margin-left: 2%;
+    border: 0;
+    padding-left: 15px;
+    height: 35px;
+    
+  }
+  
+  
+  
+  
+  
+  .fig2{
+    position: absolute;
+    right: 45%;
+    top: 0%;
+  }
+  .fig1{
+  position: absolute;
+  right: 2%;
+  top: 30%;}
+  
+  .header {
+    background-color: #ffffff;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+  }
+  
+  div.box {
+    background:#569DD5;
+    color: white;
+    border-width: 3px;
+  }
+  
+  .position{
+    position: absolute;
+    top : 30%;
+    left: 20%;
+  }
+  
+  .position2{
+    position: absolute;
+    top : 37%;
+    left: 20%;
+  }
+  .position3{
+    position: absolute;
+    top :52%;
+    left: 20%;
+  }
+  .position4{
+    position: absolute;
+    top : 67%;
+    left: 20%;
+  }
+  
+  
+  .limite {
+  
+  
+    width: 290px;
+  
+  
+    float: left;
+  
+    font-size: 25px;
+  }
+  
+  .box{
+  
+      background-color: hsla(0, 100%, 50%, 0.11);
+      height: 100px;
+      width: 275px;
+      border: 5px solid #969393;
+      border-radius: 10px;
+      float: left;
+      margin: 10px;
+      font-size: 20px;
+      
+  
+  }
+  
+  
+  
+  
+  
+  #vocalbutton{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    float:none;
+    margin-right: 30px;
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;}
+  #sendButton {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    float: none;
+    margin-right: 30px;
+    text-align: center;
+    padding: 2px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #clearButtom{
+    bottom: 1.5%;
+    background-color: #4983C3;
+    color: white;
+  }
+  
+  
+  
+  
+  .imgProfile {
+    box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
+    border-radius: 50px;
+    width: 60%;
+  }
+  
+  
+  /* css for dropdown menu of the bot */
+  
+  
+  
+  .bn3 {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.1rem 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    backface-visibility: hidden;
+    border: 0.3rem solid transparent;
+    border-radius: 3rem;
+    position: absolute;
+    bottom: 1%;
+    right: 2%;
+    
+  }
+  .bn4:focus{
+    background-color: rgb(47, 38, 38);
+  }
+  .bn4 {
+    border-color: transparent;
+    background-color: #464343;
+    color: #000;
+    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+  }
+    
+  .bn4:hover {
+    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+  }
+  
+  
+  
+  
+  
+  
+  /*========== css related to chats elements============= */
+  
+  
+  
+  
+  
+  
+  /* css for quick replies */
+  
+  .FastReplies {
+    padding: 5px;
+    position: relative;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    will-change: transform;
+    user-select: none;
+    cursor: pointer;
+    scroll-behavior: smooth;
+  }
+  
+  
+  
+  .FastReplies.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
+  }
+  
+  
+  
+  
+  /* css for botTyping */
+  
+  .botTyping {
+    float: left;
+    margin-top: 5px;
+    background: #e3e7ee;
+    color: #000000;
+    /* box-shadow: 2px 3px 9px 0px #9a82847a; */
+    margin-left: 0.5em;
+    padding: 15px;
+    border-radius: 5px 20px 20px 20px;
+    max-width: 60%;
+    min-width: 1%;
+    word-wrap: break-word;
+    border-radius: 5px 20px 20px 20px;
+  }
+  
+  .botTyping > div {
+    width: 10px;
+    height: 10px;
+    background-color: #060dcfc7;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    margin-right: 5px;
+  }
+  
+  .botTyping .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+  
+  .botTyping .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+  
+/* Night Mode Styles */
+.night-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Night Mode Toggle Button */
+.night-mode-toggle {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  padding: 8px 12px;
+  background-color: #2c3034;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.night-mode-toggle:hover {
+  background-color: #2c2f33;
+}
+
+/* Message Bubbles */
+.message-bubble {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  max-width: 60%;
+  word-wrap: break-word;
+}
+
+.user-bubble {
+  background-color: #282c2f;
+  color: white;
+  text-align: right;
+  align-self: flex-end;
+}
+
+.bot-bubble {
+  background-color: #0000ff;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  align-self: flex-start;
+}
+
+.chats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Night Mode Styles */
+.night-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+
+.night-mode .header {
+  background-color: #2c2f33;
+}
+
+.night-mode .usrInput {
+  background-color: #333;
+  color: #fff;
+}
+
+.night-mode .keypad {
+  background-color: #2c2f33;
+  border-color: #444;
+}
+
+.night-mode .bn3.bn4 {
+  background-color: #444;
+  color: #fff;
+}
+
+.night-mode #clearButton {
+  background-color: #444;
+  color: #fff;
+}
+
+.night-mode .botMsg {
+  background-color: rgba(160, 160, 219, 0.84);
+  color: #000;
+}
+
+.night-mode .userMsg {
+  background-color: rgba(44, 44, 44, 1);
+  color: #fff;
+}
+
+/* Specific Styles for Message Bubbles */
+.night-mode .user-bubble {
+  background-color: #444;
+  color: #fff;
+}
+
+.night-mode .bot-bubble {
+  background-color: #a0a0db;
+  color: #000;
+}
+
+/* Adjust Button Colors */
+.night-mode .night-mode-toggle {
+  background-color: #555;
+  color: white;
+}
+
+.night-mode .night-mode-toggle:hover {
+  background-color: #666;
+}
+.night-mode #wrapper {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  @-webkit-keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+      -webkit-transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+    }
+  }
+  
+  @keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    40% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  
+  
+  
+  
+  #voice-button {
+    margin-left: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
