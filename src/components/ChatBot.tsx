@@ -29,7 +29,7 @@ const Chatbot: React.FC = () => {
 
       // Show typing bubble
       setIsTyping(true);
-
+      setInput("");
       try {
         const response = await axios.post(
           "http://localhost:5005/webhooks/rest/webhook",
@@ -50,8 +50,6 @@ const Chatbot: React.FC = () => {
 
       // Hide typing bubble
       setIsTyping(false);
-
-      setInput("");
     }
   };
 
@@ -85,6 +83,11 @@ const Chatbot: React.FC = () => {
     setMessages([]);
   };
 
+  const redirectToLink = () => {
+    // Replace 'https://www.example.com' with your desired URL
+    window.open("https://www.example.com", "_blank");
+  };
+
   const toggleNightMode = () => {
     setIsNightMode(!isNightMode);
   };
@@ -96,7 +99,7 @@ const Chatbot: React.FC = () => {
       style={{ height: "100vh", width: "100vw" }}
     >
       <div className={`header ${isNightMode ? "night-mode" : ""}`}>
-        <figure className="fig2" id="clearButton" onClick={clearMessages}>
+        <figure className="fig2" id="clearButton" onClick={redirectToLink}>
           <img
             src={
               isNightMode
@@ -151,9 +154,11 @@ const Chatbot: React.FC = () => {
           ))}
           {isTyping && (
             <div className="typing-indicator">
-              <div className="dot"></div>
-              <div className="dot"></div>
-              <div className="dot"></div>
+              <div className="typing-bubble">
+                <div className="dot"></div>
+                <div className="dot"></div>
+                <div className="dot"></div>
+              </div>
             </div>
           )}
         </div>

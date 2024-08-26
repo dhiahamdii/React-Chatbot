@@ -167,6 +167,11 @@ const App = () => {
     setIsSidebarVisible(!isSidebarVisible);
   };
 
+  const redirectToLink = () => {
+    // Replace 'https://www.example.com' with your desired URL
+    window.open("https://www.dynamix-services.com/", "_blank");
+  };
+
   const toggleNightMode = () => {
     setIsNightMode(!isNightMode);
   };
@@ -206,6 +211,7 @@ const App = () => {
               height: "40px", // Adjust the size as needed
               marginRight: "10px",
             }}
+            onClick={redirectToLink}
           />
           {isSidebarVisible && (
             <span

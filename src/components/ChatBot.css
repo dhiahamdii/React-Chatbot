@@ -629,22 +629,35 @@
 
 
 
-  /* Chatbot.css */
+/* Chatbot.css */
 
 /* Typing indicator */
 .typing-indicator {
   display: flex;
   align-items: center;
+  padding: 12px;
+  /* Make sure the typing indicator is visible and centered */
+}
+
+.typing-bubble {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
   padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 3px 4px rgba(0,0,0,0.2);
+  /* Adjust colors for night mode */
+  background-color: #302355;
+  color: #fff;
 }
 
 .dot {
   width: 8px;
   height: 8px;
   margin: 0 4px;
-  background-color: #000000;
+  background-color: #fff1f1;
   border-radius: 50%;
-  animation: typing 1s infinite alternate;
+  animation: typing 1s infinite alternate, colorChange 3s infinite;
 }
 
 @keyframes typing {
@@ -655,7 +668,20 @@
     opacity: 1;
   }
 }
-
+@keyframes colorChange {
+  0% {
+    background-color: rgb(6, 255, 126); /* Red */
+  }
+  33% {
+    background-color: rgb(52, 116, 255); /* Green */
+  }
+  66% {
+    background-color: rgb(255, 142, 55); /* Blue */
+  }
+  100% {
+    background-color: rgb(225, 255, 0); /* Back to Red */
+  }
+}
 /* Adjust colors for night mode */
 .night-mode .typing-indicator .dot {
   background-color: #001eff;
