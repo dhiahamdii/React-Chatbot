@@ -111,7 +111,7 @@ const Chatbot: React.FC = () => {
           <img
             src={
               isNightMode
-                ? "src/assets/LIGHT-MODE.png"
+                ? "src/assets/image (6).png"
                 : "src/assets/DARK-MODE.png"
             }
             height="36px"

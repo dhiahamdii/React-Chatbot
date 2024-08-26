@@ -169,7 +169,8 @@
   .fig2{
     position: absolute;
     right: 45%;
-    top: 0%;
+    top: 10%;
+
   }
   .fig1{
   position: absolute;
@@ -471,7 +472,7 @@
 .night-mode .usrInput,
 /*.night-mode .chats,*/
 .night-mode .container {
-  background-color: #000;
+  background-color: #1e1e1e;
   color: #fff;
 }
 
@@ -491,7 +492,7 @@
 
 /* General Night Mode Styles */
 .night-mode {
-  background-color: #1e1e1e;
+  background-color: #2c2f33;
   color: #ffffff;
 }
 
@@ -516,7 +517,7 @@
 }
 
 .night-mode #clearButton {
-  background-color: #444;
+  background-color: transparent;
   color: #fff;
 }
 
@@ -659,3 +660,36 @@
 .night-mode .typing-indicator .dot {
   background-color: #001eff;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Logo container style */
+.logo-container {
+  background-color: transparent; /* Ensures no background color */
+  padding: 0;
+  margin: 0;
+}
+
+/* Night mode adjustments for logo */
+.night-mode .logo-container {
+  background-color: transparent; /* Ensures transparency in night mode */
+}
+
+/* Ensure logo itself is not affected by background color */
+.logo {
+  background-color: transparent; /* Ensures logo background is transparent */
+  display: block; /* Ensure proper display */
+}
+
