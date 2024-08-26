@@ -19,7 +19,10 @@
   
   body {
     background-color: #ffffff;
+    overflow: hidden; /* Disable scrolling for the whole page */
+
   }
+  
   
   .chat_header_title {
     color: white;
@@ -379,7 +382,7 @@
   .botTyping > div {
     width: 10px;
     height: 10px;
-    background-color: #060dcfc7;
+    background-color: #31336bc7;
     border-radius: 100%;
     display: inline-block;
     -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
@@ -438,7 +441,7 @@
 }
 
 .bot-bubble {
-  background-color: #0000ff;
+  background-color: #302355;
   color: rgb(255, 255, 255);
   text-align: left;
   align-self: flex-start;
@@ -448,6 +451,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  
 }
 
 
@@ -455,6 +459,23 @@
 
 
 
+/* Chatbot.css */
+
+.night-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+.night-mode .header,
+.night-mode .keypad,
+.night-mode .usrInput,
+/*.night-mode .chats,*/
+.night-mode .container {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Ensure no other styles override the night mode background */
 
 
 
@@ -516,8 +537,8 @@
 }
 
 .night-mode .bot-bubble {
-  background-color: #a0a0db;
-  color: #000;
+  background-color: #0000b5;
+  color: #ffffff;
 }
 
 /* Adjust Button Colors */
@@ -593,3 +614,48 @@
     border-radius: 50%;
     cursor: pointer;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Chatbot.css */
+
+/* Typing indicator */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  background-color: #000000;
+  border-radius: 50%;
+  animation: typing 1s infinite alternate;
+}
+
+@keyframes typing {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Adjust colors for night mode */
+.night-mode .typing-indicator .dot {
+  background-color: #001eff;
+}

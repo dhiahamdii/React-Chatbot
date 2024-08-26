@@ -13,6 +13,7 @@ const Chatbot: React.FC = () => {
   const isRecordingRef = useRef<boolean>(false);
   const senderIdRef = useRef<string>(uuidv4());
   const [isNightMode, setIsNightMode] = useState<boolean>(false);
+  const [isTyping, setIsTyping] = useState<boolean>(false);
 
   useEffect(() => {
     navigator.mediaDevices
@@ -25,6 +26,9 @@ const Chatbot: React.FC = () => {
     if (input.trim()) {
       const userMessage = { sender: senderIdRef.current, text: input };
       setMessages((prevMessages) => [...prevMessages, userMessage]);
+
+      // Show typing bubble
+      setIsTyping(true);
 
       try {
         const response = await axios.post(
@@ -43,6 +47,9 @@ const Chatbot: React.FC = () => {
       } catch (error) {
         console.error("Error sending message to Rasa server:", error);
       }
+
+      // Hide typing bubble
+      setIsTyping(false);
 
       setInput("");
     }
@@ -83,9 +90,12 @@ const Chatbot: React.FC = () => {
   };
 
   return (
-    <div id="wrapper" className={isNightMode ? "night-mode" : ""}>
-      {/* <Sidebar isNightMode={isNightMode} /> */}
-      <div className="header">
+    <div
+      id="wrapper"
+      className={isNightMode ? "night-mode" : ""}
+      style={{ height: "100vh", width: "100vw" }}
+    >
+      <div className={`header ${isNightMode ? "night-mode" : ""}`}>
         <figure className="fig2" id="clearButton" onClick={clearMessages}>
           <img
             src={
@@ -110,29 +120,22 @@ const Chatbot: React.FC = () => {
         </figure>
       </div>
 
-      {/* <button className="night-mode-toggle" onClick={toggleNightMode}>
-        {isNightMode ? "Light Mode" : "Dark Mode"}
-      </button> */}
-
-      {/* <button className="bn3 bn4" id="clearButton" onClick={clearMessages}>
-        Clear
-      </button> */}
-
-      <div className="container">
+      <div className={`container ${isNightMode ? "night-mode" : ""}`}>
         <div id="modal1" className="modal">
           <canvas id="modal-chart"></canvas>
         </div>
 
         <div
-          className="chats"
+          className={`chats ${isNightMode ? "night-mode" : ""}`}
           id="chats"
           style={{
             position: "absolute",
-            right: "15%",
-            width: "68%",
             top: "12%",
-            overflow: "auto",
             bottom: "15%",
+            left: "15%",
+            right: "15%",
+            overflowY: "auto" /* Enable vertical scrolling */,
+            paddingBottom: "100px",
           }}
         >
           {messages.map((msg, index) => (
@@ -140,27 +143,34 @@ const Chatbot: React.FC = () => {
               key={index}
               className={`message-bubble ${
                 msg.sender === "bot" ? "bot-bubble" : "user-bubble"
-              }`}
+              } ${isNightMode ? "night-mode" : ""}`}
             >
               <strong>{msg.sender === "bot" ? "Bot" : "You"}:</strong>{" "}
               {msg.text}
             </div>
           ))}
+          {isTyping && (
+            <div className="typing-indicator">
+              <div className="dot"></div>
+              <div className="dot"></div>
+              <div className="dot"></div>
+            </div>
+          )}
         </div>
 
         <div
           className={`keypad ${isNightMode ? "night-mode" : ""}`}
           style={{
-            position: "absolute",
-            bottom: 10, // Align it to the bottom of the viewport
-            left: 270, // Align it to the left of the viewport
-
-            width: "65%", // Make sure it spans the full width of the viewport
+            position: "fixed",
+            bottom: 10,
+            left: "15%",
+            width: "68%",
             display: "flex",
             alignItems: "center",
             padding: "10px",
             borderRadius: "20px",
-            boxShadow: "0 -2px 10px rgba(0,0,0,0.3)", // Optional: add some shadow for better visibility
+            boxShadow: "0 -2px 10px rgba(0,0,0,0.3)",
+            background: isNightMode ? "#000" : "#fff",
           }}
         >
           <textarea
@@ -169,6 +179,12 @@ const Chatbot: React.FC = () => {
             className={`usrInput ${isNightMode ? "night-mode" : ""}`}
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault(); // Prevent adding a new line
+                handleSend();
+              }
+            }}
             style={{
               position: "relative",
               flex: 1,
@@ -206,7 +222,6 @@ const Chatbot: React.FC = () => {
             style={{
               fontSize: "22px",
               color: "#fff",
-
               border: "none",
               cursor: "pointer",
               padding: "10px",
