@@ -130,8 +130,8 @@ const Chatbot: React.FC = () => {
           id="chats"
           style={{
             position: "absolute",
-            top: "12%",
-            bottom: "15%",
+            top: "20%",
+            bottom: "5%",
             left: "15%",
             right: "15%",
             overflowY: "auto" /* Enable vertical scrolling */,
